@@ -1,6 +1,6 @@
 .header {
   font-family: var(--font-courier-prime);
-  border-bottom: 1px solid var(--neutral__800);
+  border-bottom: 1px solid var(--neutral__500);
   padding: 1rem;
 
   .wrapper {
@@ -22,6 +22,19 @@
 
 .nav {
   display: none;
+}
+@media (width >= 40rem) {
+  .header {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .header {
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
 }
 
 @media (width >= 64rem) {
