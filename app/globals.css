@@ -1,8 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #f6f6f6;
   --foreground: #171717;
+  --neutral__50: #f9fafb;
+  --neutral__100: #f3f4f6;
+  --neutral__200: #e5e7eb;
+  --neutral__300: #d1d5db;
+  --neutral__400: #9ca3af;
+  --neutral__500: #6b7280;
+  --neutral__600: #4b5563;
+  --neutral__700: #374151;
+  --neutral__800: #1f2937;
+  --neutral__900: #111827;
+  --primary__700: #004030;
+  --primary__500: #336659;
+  --primary__300: #8aa7a0;
+  --primary__50: #e6ecea;
+  --primary__900: #003a2c;
+  --secondary__700: #954932;
+  --secondary__500: #aa6d5b;
+  --secondary__300: #ceaba1;
+  --secondary__50: #f4edeb;
+  --secondary__900: #6a3424;
+  --success__50: #ecfdf5;
+  --success__300: #a7f3d0;
+  --success__500: #10b981;
+  --success__700: #059669;
+  --success__900: #065f46;
+  --warning__50: #fffbeb;
+  --warning__300: #fde68a;
+  --warning__500: #fbbf24;
+  --warning__700: #d97706;
+  --warning__900: #92400e;
+  --error__50: #fef2f2;
+  --error__300: #fecaca;
+  --error__500: #f87171;
+  --error__700: #dc2626;
+  --error__900: #991b1b;
+  --shade__white: #ffffff;
+  --shade__black: #000000;
+  --1: 16;
+  --2: 32;
+  --3: 48;
+  --4: 64;
+  --5: 80;
+  --6: 96;
+  --7: 112;
+  --8: 128;
+  --9: 144;
+  --10: 160;
+  --0125: 2;
+  --025: 4;
+  --0375: 6;
+  --05: 8;
+  --0625: 10;
+  --075: 12;
+  --0875: 14;
+  --125: 20;
+  --15: 24;
+  --175: 28;
+  --225: 36;
+  --25: 40;
+  --275: 44;
+  --35: 56;
 }
 
 @theme inline {
@@ -12,12 +73,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
