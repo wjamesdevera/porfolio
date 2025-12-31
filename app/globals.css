@@ -2,7 +2,7 @@
 
 :root {
   --background: #f6f6f6;
-  --foreground: #171717;
+  --foreground: #6b7280;
   --neutral__50: #f9fafb;
   --neutral__100: #f3f4f6;
   --neutral__200: #e5e7eb;
@@ -83,6 +83,6 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--neutral__400);
   font-family: var(--font-courier-prime), Arial, Helvetica, sans-serif;
 }
