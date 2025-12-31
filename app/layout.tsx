@@ -3,13 +3,13 @@ import { Courier_Prime, Fira_Sans } from "next/font/google";
 import "./globals.css";
 
 export const courier_prime = Courier_Prime({
-  weight: "400",
+  weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-courier-prime",
 });
 
 export const fira_sans = Fira_Sans({
-  weight: "400",
+  weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font-fira-sans",
 });
