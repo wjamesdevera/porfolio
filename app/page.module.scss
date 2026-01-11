@@ -51,6 +51,28 @@
   }
 }
 
+.about_me {
+  padding-top: 7rem;
+  padding-bottom: 6rem;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--neutral__600);
+  }
+
+  ul {
+    list-style: disc;
+    padding: 1rem;
+  }
+}
+
 @media (width >= 40rem) {
   .main {
     margin-left: 5rem;
