@@ -1,6 +1,91 @@
 import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
 import s from "./page.module.scss";
+import ProjectCard from "./components/project-card";
+
+interface IProject {
+  project_url?: string;
+  img_url: string;
+  title: string;
+  description: string;
+  work: string;
+  impact: string;
+  technologies: string[];
+}
+
+const projects: IProject[] = [
+  {
+    img_url: "/assets/moodmeter-landing-page.png",
+    title: "moodmeter",
+    description:
+      "A mental health platform enabling UST students to log their emotions and allowing university counselors to monitor student well-being.",
+    work: "developed the daily mood-entry module and managed the full deployment lifecycle using Digital Ocean and Vercel within a Scrum framework.",
+    impact:
+      "provided university counselors with a real-time data visualization tool to identify and support students in need of mental health intervention.",
+    technologies: ["next.js", "python (django)", "postgres"],
+  },
+  {
+    img_url: "/assets/twincj-glamping-resort.png",
+    title: "twincj glamping resort reservation system",
+    description:
+      "A custom-built digital booking and management platform for TwinCJ Glamping Resort.",
+    work: "served as System Analyst and Architect, designing the database schema and the overall system architecture to handle real-time bookings.",
+    impact:
+      "transitioned the resort from manual scheduling to an automated system, significantly reducing booking errors and streamlining guest management.",
+    technologies: ["next.js", "expreses", "postgres"],
+  },
+  {
+    img_url: "/assets/py18-R101.png",
+    title: "tomasinoweb py18 r101",
+    description:
+      "The official recruitment website for TomasinoWeb’s 18th batch, designed to introduce the organization and automate the application process.",
+    work: "spearheaded the frontend team, overseeing component creation, performing technical code reviews, and optimizing the registration workflow.",
+    impact:
+      "successfully managed the digital onboarding of hundreds of applicants through a high-performance, bug-free registration portal.",
+    technologies: ["next.js"],
+  },
+  {
+    img_url: "/assets/py17-R101.png",
+    title: "tomasinoweb py17 r101",
+    description:
+      "The recruitment portal for TomasinoWeb’s 17th batch, focusing on digital storytelling and member engagement.",
+    work: "built the core landing page and developed a set of custom-styled UI components to reflect the batch's unique theme.",
+    impact:
+      "enhanced the organization's digital presence, resulting in a more engaging and user-friendly first impression for prospective members.",
+    technologies: ["next.js"],
+  },
+  {
+    img_url: "/assets/py16-R101.png",
+    title: "tomasinoweb py16 r101",
+    description:
+      "The foundational recruitment website for TomasinoWeb’s 16th batch, marking the shift toward a more digital-first recruitment strategy.",
+    work: "contributed to the development of the primary UI library and the execution of the main landing page architecture.",
+    impact:
+      "modernized the recruitment experience by replacing legacy systems with a streamlined, responsive web application.",
+    technologies: ["next.js"],
+  },
+  {
+    img_url: "/assets/lamona-landing-page.png",
+    title: "lamona",
+    description:
+      "A TomasinoWeb project designed to help UST students find their next meal. A comprehensive restaurant directory for the España community.",
+    work: "engineered a library of reusable UI components using React and SCSS, focusing on modularity and responsive design.",
+    impact:
+      "established a design-to-code pipeline that ensured pixel-perfect implementation of the brand’s playful visual identity.",
+    technologies: ["next.js", "postgres"],
+  },
+  {
+    img_url: "/assets/thomscore-landing-page.png",
+    title: "thomscore",
+    description:
+      "The first collective scoreboard for the University of Santo Tomas, tracking the performance of the university's premier athletic teams.",
+    work: "crafted a specialized UI kit for sports data, ensuring high-speed rendering of scores and player statistics using React.",
+    impact:
+      "centralized campus sports data into a single, cohesive interface, making it easier for the Thomasian community to follow and support their athletes.",
+    technologies: ["next.js"],
+  },
+];
+
 export default function Home() {
   return (
     <div className={s.page_layout}>
