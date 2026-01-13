@@ -22,7 +22,7 @@ const projects: IProject[] = [
     work: "developed the daily mood-entry module and managed the full deployment lifecycle using Digital Ocean and Vercel within a Scrum framework.",
     impact:
       "provided university counselors with a real-time data visualization tool to identify and support students in need of mental health intervention.",
-    technologies: ["next.js", "python (django)", "postgres"],
+    technologies: ["next.js", "django", "postgres"],
   },
   {
     img_url: "/assets/twincj-glamping-resort.png",
@@ -224,6 +224,25 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </article>
+
+          <article className={`${s.section} ${s.projects} ${s.border_bottom}`}>
+            <div className={s.wrapper}>
+              <h3 className={s.title}>projects</h3>
+              <div className={s.project_container}>
+                {projects.map((project) => (
+                  <ProjectCard
+                    key={project.title}
+                    img_url={project.img_url}
+                    title={project.title}
+                    description={project.description}
+                    work={project.work}
+                    impact={project.impact}
+                    technologies={project.technologies}
+                  />
+                ))}
               </div>
             </div>
           </article>
