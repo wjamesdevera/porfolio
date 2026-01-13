@@ -1,7 +1,10 @@
+"use client";
 import Footer from "@/app/components/footer";
 import Navbar from "@/app/components/navbar";
 import s from "./page.module.scss";
 import ProjectCard from "./components/project-card";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 interface IProject {
   project_url?: string;
@@ -87,18 +90,32 @@ const projects: IProject[] = [
 ];
 
 export default function Home() {
+  useGSAP(() => {
+    gsap.from(".text", {
+      y: 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: ".text",
+        start: "top 80%",
+        markers: true, // Remove in production
+      },
+    });
+  });
   return (
-    <div className={s.page_layout}>
+    <div className={`${s.page_layout} ${s["fade-in"]}`}>
       <Navbar />
       <main className={s.main}>
         <div className={s.wrapper}>
           <article className={`${s.hero_section} ${s.section}`}>
-            <div className={s.hero}>
-              <h1 className={s.title}>Winfrey De Vera</h1>
-              <p className={s.sub_title}>
+            <div className={`${s.hero}`}>
+              <h1 className={`${s.title} text`}>Winfrey De Vera</h1>
+              <p className={`${s.sub_title} text`}>
                 Designing the Engine Behind the Interface.
               </p>
-              <p className={s.description}>
+              <p className={`${s.description} text`}>
                 I am a Software Engineer based in Quezon City, dedicated to
                 building high-performance web applications. I thrive at the
                 intersection of clean code and impactful community-driven
@@ -109,34 +126,36 @@ export default function Home() {
 
           <article className={`${s.section} ${s.about_me} ${s.border_bottom}`}>
             <div className={s.wrapper}>
-              <h2 className={s.title}>about me</h2>
-              <p>
+              <h2 className={`${s.title} text`}>about me</h2>
+              <p className="text">
                 With over two years of experience in the digital space, I
                 currently serve as the Lead Frontend Developer at TomasinoWeb.
                 In this role, I bridge the gap between creative design and
                 technical execution, mentoring a team of developers to bring
                 ambitious digital visions to life.
               </p>
-              <p>
+              <p className="text">
                 Beyond professional development, I am passionate about
                 knowledge-sharing. I’ve spent my free time tutoring fellow
                 college students in programming, helping them navigate the
                 complexities of modern software development.
               </p>
-              <p>Here are some technologies I have been working on:</p>
+              <p className="text">
+                Here are some technologies I have been working on:
+              </p>
               <div className={s.skill_list}>
                 <ul className={s.left}>
-                  <li>python</li>
-                  <li>react.js</li>
-                  <li>javascrip es6+</li>
+                  <li className="text">python</li>
+                  <li className="text">react.js</li>
+                  <li className="text">javascrip es6+</li>
                 </ul>
                 <ul className={s.right}>
-                  <li>typescript</li>
-                  <li>java</li>
-                  <li>php</li>
+                  <li className="text">typescript</li>
+                  <li className="text">java</li>
+                  <li className="text">php</li>
                 </ul>
               </div>
-              <p>
+              <p className="text">
                 When I'm not at my desk, you'll find me exploring the latest
                 tech trends, and curated playlists. I believe the discipline of
                 working out mirrors the persistence needed in coding: progress
@@ -149,26 +168,26 @@ export default function Home() {
             className={`${s.section} ${s.experience} ${s.border_bottom}`}
           >
             <div className={s.wrapper}>
-              <h2 className={s.title}>experience</h2>
+              <h2 className={`${s.title} text`}>experience</h2>
               <div className={s.content}>
                 <div className={s.experience_container}>
                   <div className="">
-                    <h3 className={s.title}>TomasinoWeb</h3>
+                    <h3 className={`${s.title} text`}>TomasinoWeb</h3>
                   </div>
-                  <div className={s.description}>
-                    <p className={s.role}>
+                  <div className={`${s.description}`}>
+                    <p className={`${s.role} text`}>
                       lead frontend Developer @tomasinoweb
                     </p>
-                    <p className={s.date}>jul 2025 - present</p>
-                    <p className={s.task}>
+                    <p className={`${s.date} text`}>jul 2025 - present</p>
+                    <p className={`${s.task} text`}>
                       Lead UI development for multiple web projects, mentoring
                       junior developers, and overseeing frontend code quality.
                     </p>
-                    <p className={s.task}>
+                    <p className={`${s.task} text`}>
                       Collaborated with backend and design teams to improve
                       accessibility, performance, and overall user experience.
                     </p>
-                    <p className={s.task}>
+                    <p className={`${s.task} text`}>
                       Championed Git-based collaboration workflows and conducted
                       code reviews for maintainable releases
                     </p>
@@ -177,20 +196,22 @@ export default function Home() {
 
                 <div className={s.experience_container}>
                   <div className="">
-                    <h3 className={s.title}>TomasinoWeb</h3>
+                    <h3 className={`${s.title} text`}>TomasinoWeb</h3>
                   </div>
-                  <div className={s.description}>
-                    <p className={s.role}>frontend Developer @tomasinoweb</p>
-                    <p className={s.date}>jul 2023 - jul 2025</p>
-                    <p className={s.task}>
+                  <div className={`${s.description}`}>
+                    <p className={`${s.role} text`}>
+                      frontend Developer @tomasinoweb
+                    </p>
+                    <p className={`${s.date} text`}>jul 2023 - jul 2025</p>
+                    <p className={`${s.task} text`}>
                       Contributed to Lamona and Thomscore, university
                       publication platforms
                     </p>
-                    <p className={s.task}>
+                    <p className={`${s.task} text`}>
                       Developed responsive and accessible UI components,
                       improving design consistency and load efficiency
                     </p>
-                    <p className={s.task}>
+                    <p className={`${s.task} text`}>
                       Enhanced cross-functional collaboration by aligning
                       frontend and backend integration.
                     </p>
@@ -199,26 +220,28 @@ export default function Home() {
 
                 <div className={s.experience_container}>
                   <div className="">
-                    <h3 className={s.title}>TwinCJ Glamping Resort</h3>
+                    <h3 className={`${s.title} text`}>
+                      TwinCJ Glamping Resort
+                    </h3>
                   </div>
                   <div className={s.description}>
-                    <p className={s.role}>
+                    <p className={`${s.role} text`}>
                       system analyst @twincj glamping resort
                     </p>
-                    <p className={s.date}>aug 2024 - mar 2025</p>
-                    <p className={s.task}>
+                    <p className={`${s.date} text`}>aug 2024 - mar 2025</p>
+                    <p className={`${s.task} text`}>
                       Designed and analyzed a full-stack booking system using
                       Express.js and Next.js.
                     </p>
-                    <p className={s.task}>
+                    <p className={`${s.task} text`}>
                       Managed Git workflows, pull requests, and version control
                       for clean and stable builds
                     </p>
-                    <p className={s.task}>
+                    <p className={`${s.task} text`}>
                       Deployed the frontend to Vercel and the API backend to
                       DigitalOcean, ensuring system availability and scalability
                     </p>
-                    <p className={s.task}>
+                    <p className={`${s.task} text`}>
                       streamlined the customer booking and admin management
                       process, reducing manual tasks
                     </p>
@@ -230,7 +253,7 @@ export default function Home() {
 
           <article className={`${s.section} ${s.projects} ${s.border_bottom}`}>
             <div className={s.wrapper}>
-              <h3 className={s.title}>projects</h3>
+              <h3 className={`${s.title} text`}>projects</h3>
               <div className={s.project_container}>
                 {projects.map((project) => (
                   <ProjectCard

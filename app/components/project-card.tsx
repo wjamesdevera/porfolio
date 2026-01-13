@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   technologies,
 }) => {
   return (
-    <a href={project_url || ""} className={s.project_card}>
+    <a href={project_url || ""} className={`${s.project_card} text`}>
       <div className={`${s.header}`}>
         <div className={s.image_container}>
           <Image
